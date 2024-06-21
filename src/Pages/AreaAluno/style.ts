@@ -1,13 +1,51 @@
 import { StyleSheet } from "react-native";
 
-
 export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-start",
+    padding: 10,
+    backgroundColor: "#1768B2",
+  },
+  card: {
+    flex: 1,
+    width: "95%",
+    backgroundColor: "#ffffff90",
+    borderRadius: 10,
+    paddingBottom:20,
+  },
+  cardTextTitulo: {
+    color: '#021627',
+    fontSize: 20,
+    fontWeight: 'bold',
+    margin: 20,
+    marginBottom: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#021627'
+  },
+  cardText:{
+    color: '#021627',
+    fontSize: 15,
+    fontWeight: 'bold',
+    marginLeft: 20,
+  },
 
-    container:{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlignVertical: 'center'
-    }
+  headerTextName:{
+    color: '#fff',
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginTop:20,
+    marginLeft: 20,
+    marginBottom: -5,
+  },
+  headerTextEmail:{
+    color: '#fff',
+    fontSize: 15,
+    fontWeight: 'bold',
+    marginLeft: 20,
+  },
 
-})
+  icon:{
+  },
+});
