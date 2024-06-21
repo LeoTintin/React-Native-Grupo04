@@ -4,9 +4,11 @@ import { TabsRoutes } from "./TabsRoutes";
 import { Login } from "../Pages/Login";
 import { StackRoutes } from "./StackRoutes";
 import { CommonActions, useNavigation } from "@react-navigation/native";
+import { AreaAluno } from "../Pages/AreaAluno";
 
 export type RootDrawerParamsList = {
   DrawerLogin: { name: string };
+  DrawerHome: { name: string };
   DrawerAreaAluno: { name: string };
 };
 
@@ -27,7 +29,7 @@ export function DrawerRoutes() {
   return (
     <Drawer.Navigator>
       <Drawer.Screen
-        name="DrawerAreaAluno"
+        name="DrawerHome"
         component={TabsRoutes}
         options={{
           drawerIcon: ({ color, size }) => (
@@ -35,6 +37,11 @@ export function DrawerRoutes() {
           ),
           drawerLabel: "Inicio",
         }}
+      />
+      <Drawer.Screen
+        name="DrawerAreaAluno"
+        component={TabsRoutes}
+        options={{ drawerLabel: "Area do aluno" }}
       />
       <Drawer.Screen
         listeners={{ focus: handleLogout }}
