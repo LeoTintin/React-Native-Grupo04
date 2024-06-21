@@ -10,29 +10,30 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-  },
-  input: {
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    marginBottom: 20,
-    paddingHorizontal: 10,
-    borderRadius: 5,
-    backgroundColor: '#fff',
+    textAlign: 'center',
   },
   list: {
-    marginTop: 20,
+    flexGrow: 1,
   },
-  taskContainer: {
-    padding: 15,
-    borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    marginBottom: 10,
+  taskItem: {
+    padding: 20,
+    marginVertical: 10,
+    backgroundColor: '#ffffff',
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
+    elevation: 5,
   },
-  taskText: {
+  taskName: {
     fontSize: 18,
+    fontWeight: 'bold',
+  },
+  taskDueDate: {
+    fontSize: 16,
+    color: '#666',
+    marginTop: 5,
   },
 });
 

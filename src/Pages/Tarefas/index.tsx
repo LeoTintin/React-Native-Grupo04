@@ -1,37 +1,33 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
-import { Task, tasksData } from './tasksData'; 
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { Task } from './types';
 import styles from './style';
 
-const TelaDeTarefas = () => {
+const tasks: Task[] = [
+  { id: '1', name: 'Desenvolvimento Mobile', dueDate: '2023-06-30' },
+  { id: '2', name: 'Banco de Dados', dueDate: '2023-07-15' },
+  { id: '3', name: 'Front End Essencial', dueDate: '2023-08-01' },
+];
+
+const TaskScreen: React.FC = () => {
   const renderItem = ({ item }: { item: Task }) => (
-    <View style={styles.taskContainer}>
-      <Text style={styles.taskTitle}>{item.titulo}</Text>
-      {item.dataVencimento ? (
-        <Text style={styles.taskDueDate}>Vencimento: {item.dataVencimento}</Text>
-      ) : (
-        <Text style={styles.taskDueDate}>Sem prazo de entrega</Text>
-      )}
-      {item.concluida && <Text style={styles.taskCompleted}>Concluído</Text>}
+    <View style={styles.taskItem}>
+      <Text style={styles.taskName}>{item.name}</Text>
+      <Text style={styles.taskDueDate}>Data de Entrega: {item.dueDate}</Text>
     </View>
   );
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Tarefas Futuras</Text>
+      <Text style={styles.title}>Tarefas de Faculdade</Text>
       <FlatList
-        data={tasksData.filter(task => !task.concluida)}
+        data={tasks}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
-      <Text style={styles.header}>Tarefas Passadas</Text>
-      <FlatList
-        data={tasksData.filter(task => task.concluida)}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={styles.list}
       />
     </View>
   );
 };
 
-export default TelaDeTarefas;
+export default TaskScreen;
