@@ -1,15 +1,14 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Feather } from "@expo/vector-icons";
-import { TabsRoutes } from "./TabsRoutes";
 import { Login } from "../Pages/Login";
-import { StackRoutes } from "./StackRoutes";
 import { CommonActions, useNavigation } from "@react-navigation/native";
-import { AreaAluno } from "../Pages/AreaAluno";
+import { TabsRoutes } from "./TabsRoutes";
+import { Cadastro } from "../Pages/Cadastro";
 
 export type RootDrawerParamsList = {
   DrawerLogin: { name: string };
   DrawerHome: { name: string };
-  DrawerAreaAluno: { name: string };
+  DrawerCadastro: { name: string };
 };
 
 const Drawer = createDrawerNavigator<RootDrawerParamsList>();
@@ -39,14 +38,16 @@ export function DrawerRoutes() {
         }}
       />
       <Drawer.Screen
-        name="DrawerAreaAluno"
-        component={TabsRoutes}
-        options={{ drawerLabel: "Area do aluno" }}
+        name="DrawerCadastro"
+        component={Cadastro}
+        options={{
+          drawerLabel: "Cadastro",
+        }}
       />
       <Drawer.Screen
         listeners={{ focus: handleLogout }}
         name="DrawerLogin"
-        component={StackRoutes}
+        component={Login}
         options={{
           drawerIcon: ({ color, size }) => (
             <Feather name="log-out" color={color} size={size} />

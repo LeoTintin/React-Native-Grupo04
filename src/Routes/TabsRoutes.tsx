@@ -21,3 +21,12 @@ export function TabsRoutes() {
     </Tab.Navigator>
   );
 }
+// export function TabsRoutes2() {
+//   return (
+//     <Tab.Navigator screenOptions={{ headerShown: false }}>
+//       <Tab.Screen name="TabAreaAluno" component={AreaAluno} />
+//       <Tab.Screen name="TabHome" component={Home} />
+//       <Tab.Screen name="TabTarefas" component={TaskScreen} />
+//     </Tab.Navigator>
+//   );
+// }
