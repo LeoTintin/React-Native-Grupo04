@@ -11,11 +11,16 @@ import { styled } from "./style";
 import { useNavigation } from "@react-navigation/native";
 import { TabsRoutes } from "../../Routes/TabsRoutes";
 import Icon from "@expo/vector-icons/Ionicons";
+import { ButtonComponent } from "../../Components/ButtomComponent";
 export function Login() {
   const nav = useNavigation();
 
   const handleLogin = () => {
     nav.navigate("StackHome", { name: "home" });
+  };
+
+  const handleCadastro = () => {
+    nav.navigate("StackCadastro", { name: "cadastro" });
   };
 
   return (
@@ -48,6 +53,12 @@ export function Login() {
             <Text style={styled.buttonText}>ENTRAR</Text>
           </TouchableOpacity>
           <Text style={styled.forgor}>Esqueceu a senha?</Text>
+        </View>
+        <View style={{ width: "80%" }}>
+          <ButtonComponent
+            title="Faça seu cadastro"
+            handleOnChange={handleCadastro}
+          />
         </View>
       </View>
     </TouchableWithoutFeedback>
