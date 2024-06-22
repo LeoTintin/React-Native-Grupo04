@@ -6,7 +6,7 @@ import styles from './style';
 const initialTasks: Task[] = [
   { id: '1', name: 'Desenvolvimento Mobile', dueDate: '2024-06-28', completed: false },
   { id: '2', name: 'Banco de Dados', dueDate: '2024-06-29', completed: false },
-  { id: '3', name: 'Inteligência Artificial', dueDate: '2024-06-30', completed: false },
+  { id: '3', name: 'Front End Essencial', dueDate: '2024-06-30', completed: false },
 ];
 
 const formatDate = (dateString: string): string => {
@@ -21,7 +21,7 @@ const TaskScreen: React.FC = () => {
   const [tasks, setTasks] = useState(initialTasks);
 
   const toggleCompletion = (id: string) => {
-    setTasks(tasks.map(task => 
+    setTasks(tasks.map(task =>
       task.id === id ? { ...task, completed: !task.completed } : task
     ));
   };
