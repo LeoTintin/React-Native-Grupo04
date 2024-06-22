@@ -4,9 +4,9 @@ import { Task } from './types';
 import styles from './style';
 
 const initialTasks: Task[] = [
-  { id: '1', name: 'Desenvolvimento Mobile', dueDate: '2023-06-30', completed: false },
-  { id: '2', name: 'Banco de Dados', dueDate: '2023-07-15', completed: false },
-  { id: '3', name: 'Inteligência Artificial', dueDate: '2023-08-01', completed: false },
+  { id: '1', name: 'Desenvolvimento Mobile', dueDate: '2024-06-28', completed: false },
+  { id: '2', name: 'Banco de Dados', dueDate: '2024-06-29', completed: false },
+  { id: '3', name: 'Inteligência Artificial', dueDate: '2024-06-30', completed: false },
 ];
 
 const formatDate = (dateString: string): string => {
@@ -43,7 +43,7 @@ const TaskScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tarefas de Faculdade</Text>
+      <Text style={styles.title}>Tarefas</Text>
       <FlatList
         data={tasks}
         renderItem={renderItem}
