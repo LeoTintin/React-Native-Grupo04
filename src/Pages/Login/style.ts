@@ -9,7 +9,7 @@ export const styled = StyleSheet.create({
   },
   caixa: {
     width: "80%",
-    height: "45%",
+    height: 450,
     backgroundColor: "#fff",
     borderRadius: 20,
     borderColor: "#fff",
@@ -44,5 +44,9 @@ forgor:{
     color:"#1768B2",
     fontSize:18,
     textDecorationLine:"underline"
-}
+},
+icons:{
+ padding:7,
+ marginTop:5
+},
 });
