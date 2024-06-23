@@ -1,5 +1,6 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Feather } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import { Login } from "../Pages/Login";
 import { CommonActions, useNavigation } from "@react-navigation/native";
 import { TabsRoutes } from "./TabsRoutes";
@@ -41,6 +42,9 @@ export function DrawerRoutes() {
         name="DrawerCadastro"
         component={Cadastro}
         options={{
+          drawerIcon: ({ color, size }) => (
+            <AntDesign name="adduser" color={color} size={size} />
+          ),
           drawerLabel: "Cadastro",
         }}
       />

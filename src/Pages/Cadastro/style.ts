@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   text: {
     color: "#fff",
     fontWeight: "bold",
-    fontSize: 15,
+    fontSize: 20,
     alignSelf: "flex-start",
     marginLeft: 35,
     marginBottom: -3,

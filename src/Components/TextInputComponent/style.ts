@@ -12,5 +12,6 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 10,
     paddingLeft: 20,
+    fontSize: 15
   },
 });
