@@ -12,11 +12,22 @@ import { useNavigation } from "@react-navigation/native";
 import { TabsRoutes } from "../../Routes/TabsRoutes";
 import Icon from "@expo/vector-icons/Ionicons";
 import { ButtonComponent } from "../../Components/ButtomComponent";
+import { useAuth } from "../../Hooks/useAuth";
 export function Login() {
+  const handleEmail = (value: string) => {
+    setEmail(value);
+  };
+
+  const handlePassword = (value: string) => {
+    setPassword(value);
+  };
+
   const nav = useNavigation();
 
+  const { loginAuth, email, password, setEmail, setPassword } = useAuth();
+
   const handleLogin = () => {
-    nav.navigate("StackHome", { name: "home" });
+    loginAuth(email, password);
   };
 
   const handleCadastro = () => {
@@ -37,6 +48,8 @@ export function Login() {
             <TextInput
               style={styled.TextInput}
               placeholder="Aluno ou Responsável"
+              onChangeText={handleEmail}
+              value={email}
             />
           </View>
           <View style={{ flexDirection: "row" }}>
@@ -46,7 +59,13 @@ export function Login() {
               color={"#868686"}
               size={35}
             />
-            <TextInput style={styled.TextInput} placeholder="Senha" />
+            <TextInput
+              style={styled.TextInput}
+              placeholder="Senha"
+              onChangeText={handlePassword}
+              value={password}
+              secureTextEntry={true}
+            />
           </View>
 
           <TouchableOpacity style={styled.button} onPress={handleLogin}>
