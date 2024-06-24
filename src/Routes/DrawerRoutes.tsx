@@ -5,6 +5,7 @@ import { Login } from "../Pages/Login";
 import { CommonActions, useNavigation } from "@react-navigation/native";
 import { TabsRoutes } from "./TabsRoutes";
 import { Cadastro } from "../Pages/Cadastro";
+import { useAuth } from "../Hooks/useAuth";
 
 export type RootDrawerParamsList = {
   DrawerLogin: { name: string };
@@ -16,6 +17,7 @@ const Drawer = createDrawerNavigator<RootDrawerParamsList>();
 
 export function DrawerRoutes() {
   const nav = useNavigation();
+  const { logoutAuth } = useAuth();
 
   const handleLogout = () => {
     nav.dispatch(
@@ -24,6 +26,7 @@ export function DrawerRoutes() {
         routes: [{ name: "StackLogin" }],
       })
     );
+    logoutAuth();
   };
 
   return (
