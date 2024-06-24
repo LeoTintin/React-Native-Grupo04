@@ -25,7 +25,7 @@ const TaskScreen: React.FC = () => {
 
   const toggleCompletion = (id: string) => {
     setTasks(tasks.map(task =>
-      task.id === id ? { ...task, completed: !task } : task
+      task.id === id ? { ...task, completed: !task.completed } : task
     ));
   };
 
