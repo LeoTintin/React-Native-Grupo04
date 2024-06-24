@@ -74,6 +74,17 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: "#021627",
   },
+  noticeContentExpanded: {
+    fontSize: 16,
+    color: "#021627",
+  },
+  readMore: {
+    color: "#1768B2",
+    fontSize: 16,
+    fontWeight: "bold",
+    textDecorationLine: "underline",
+    marginTop: 5,
+  },
   classesContainer: {
     marginTop: 20,
     paddingHorizontal: 10,
@@ -136,49 +147,18 @@ export const styles = StyleSheet.create({
   eventDescription: {
     fontSize: 16,
     color: "#021627",
-    marginBottom: 5,
+  },
+  eventDescriptionExpanded: {
+    fontSize: 16,
+    color: "#021627",
   },
   eventLink: {
     fontSize: 16,
     color: "#021627",
     textDecorationLine: "underline",
-    marginBottom: 5,
+    marginTop: 5,
   },
   card: {
     flex: 1,
-    width: "95%",
-    backgroundColor: "#ffffff90",
-    borderRadius: 10,
-    paddingBottom: 20,
   },
-  cardTextTitulo: {
-    color: '#021627',
-    fontSize: 20,
-    fontWeight: 'bold',
-    margin: 20,
-    marginBottom: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#021627',
-  },
-  cardText: {
-    color: '#021627',
-    fontSize: 15,
-    fontWeight: 'bold',
-    marginLeft: 20,
-  },
-  headerTextName: {
-    color: '#fff',
-    fontSize: 25,
-    fontWeight: 'bold',
-    marginTop: 20,
-    marginLeft: 20,
-    marginBottom: -5,
-  },
-  headerTextEmail: {
-    color: '#fff',
-    fontSize: 15,
-    fontWeight: 'bold',
-    marginLeft: 20,
-  },
-  icon: {},
 });
