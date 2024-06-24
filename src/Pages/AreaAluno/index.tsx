@@ -2,71 +2,78 @@ import React from "react";
 import { FlatList, Text, View } from "react-native";
 import Icon from "@expo/vector-icons/Ionicons";
 import { styles } from "./style";
+import { useAuth } from "../../Hooks/useAuth";
 
 export function AreaAluno() {
+  const { email, name } = useAuth();
+
   const arrayMoc = [
     {
       id: 1,
-      materia: "React Native",
-      p01: 29,
+      materia: "Lógica de Programação",
+      p01: 30,
       p02: 60,
       conceito: 10,
-      faltas: "75%",
+      faltas: "0%",
     },
     {
       id: 2,
-      materia: "React Native",
-      p01: 29,
+      materia: "Banco de dados",
+      p01: 30,
       p02: 60,
       conceito: 10,
-      faltas: "75%",
+      faltas: "0%",
     },
     {
       id: 3,
-      materia: "React Native",
-      p01: 29,
+      materia: "Programação orientada a objetos",
+      p01: 30,
       p02: 60,
       conceito: 10,
-      faltas: "75%",
+      faltas: "0%",
     },
     {
       id: 4,
-      materia: "React Native",
-      p01: 29,
+      materia: "Desenvolvimento de API Restful",
+      p01: 30,
       p02: 60,
       conceito: 10,
-      faltas: "75%",
+      faltas: "0%",
     },
     {
       id: 5,
-      materia: "React Native",
-      p01: 29,
+      materia: "Desenvolvimento WEB - React",
+      p01: 30,
       p02: 60,
       conceito: 10,
-      faltas: "75%",
+      faltas: "0%",
     },
     {
       id: 6,
-      materia: "React Native",
-      p01: 29,
+      materia: "Desenvolvimento Mobile - React Native",
+      p01: 30,
       p02: 60,
       conceito: 10,
-      faltas: "75%",
+      faltas: "0%",
     },
   ];
 
   return (
     <FlatList
       ListHeaderComponent={
-        <View>
-          <Text style={styles.headerTextName}>NOME ALUNO</Text>
-          <Text style={styles.headerTextEmail}>aluno@email.com</Text>
-          <Icon
-            name="person-circle"
-            style={styles.icon}
-            color={"#fff"}
-            size={60}
-          />
+        <View style={styles.cardUser}>
+          <View>
+            <Text style={styles.headerTextName}>{name}</Text>
+            <Text style={styles.headerTextEmail}>{email}</Text>
+          </View>
+          <View>
+            <Icon
+              name="person-circle"
+              style={styles.icon}
+              color={"#fff"}
+              size={60}
+            />
+          </View>
         </View>
       }
       contentContainerStyle={{ backgroundColor: "#1768B2" }}
@@ -80,7 +87,8 @@ export function AreaAluno() {
               Avaliação individual: {item.p01}
             </Text>
             <Text style={styles.cardText}>Avaliação em grupo: {item.p02}</Text>
-            <Text style={styles.cardText}>conceito: {item.conceito}</Text>
+            <Text style={styles.cardText}>Conceito: {item.conceito}</Text>
+            <Text style={styles.cardTextLine}>Faltas: {item.faltas}</Text>
           </View>
         </View>
       )}
