@@ -37,7 +37,7 @@ export const styled = StyleSheet.create({
 },
 buttonText:{
     fontSize:20,
-    color:"#868686",
+    color:"#EBEBEB",
     fontWeight:'500'
 },
 forgor:{

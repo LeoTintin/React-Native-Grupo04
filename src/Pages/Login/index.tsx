@@ -6,6 +6,7 @@ import {
   Text,
   TouchableWithoutFeedback,
   Keyboard,
+  Image,
 } from "react-native";
 import { styled } from "./style";
 import { useNavigation } from "@react-navigation/native";
@@ -13,11 +14,12 @@ import { TabsRoutes } from "../../Routes/TabsRoutes";
 import Icon from "@expo/vector-icons/Ionicons";
 import { ButtonComponent } from "../../Components/ButtomComponent";
 import { useAuth } from "../../Hooks/useAuth";
+import logo from "../../Assets/logo.png"
 export function Login() {
   const handleEmail = (value: string) => {
     setEmail(value);
   };
-
+ 
   const handlePassword = (value: string) => {
     setPassword(value);
   };
@@ -37,6 +39,7 @@ export function Login() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styled.container}>
+      <Image style={{height:'15%',width:'30%', margin:25}} source={logo} alt="logo"/>
         <View style={styled.caixa}>
           <View style={{ flexDirection: "row" }}>
             <Icon
@@ -68,7 +71,7 @@ export function Login() {
             />
           </View>
 
-          <TouchableOpacity style={styled.button} onPress={handleLogin}>
+          <TouchableOpacity style={[styled.button,{backgroundColor: email && password ?'#1768B2':'#868686'}]} onPress={handleLogin}>
             <Text style={styled.buttonText}>ENTRAR</Text>
           </TouchableOpacity>
           <Text style={styled.forgor}>Esqueceu a senha?</Text>
